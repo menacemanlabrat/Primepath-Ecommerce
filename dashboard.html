@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PrimePath | Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dark">
+  <div class="container">
+    <h1>👋 Welcome, PrimeUser</h1>
+
+    <section class="card">
+      <h2>🪙 Wallet Balance</h2>
+      <p>$130.00</p>
+    </section>
+
+    <section class="card">
+      <h2>📈 Wallet Growth Chart</h2>
+      <canvas id="growthChart" width="100%" height="300"></canvas>
+    </section>
+
+    <section class="card">
+      <h2>🏪 Store Wallet Address</h2>
+      <input type="text" id="walletAddress" value="0xD3f7C3aB56a1e11F9903C2..." readonly style="width: 100%;" />
+      <button onclick="copyWallet()" class="btn">Copy Wallet Address</button>
+    </section>
+
+    <section class="card">
+      <h2>💵 Buy Crypto</h2>
+      <p>To fund your store, send crypto to the wallet address above.</p>
+      <p>Need help? <a href="https://wa.me/234XXXXXXXXXX" target="_blank">Chat with a verified agent</a>.</p>
+    </section>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const ctx = document.getElementById('growthChart').getContext('2d');
+    const chart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['Day 1', 'Day 2', 'Day 3'],
+        datasets: [{
+          label: 'Wallet Growth ($)',
+          data: [100, 120, 130],
+          borderColor: 'red',
+          borderWidth: 2,
+          fill: false
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: { beginAtZero: true }
+        }
+      }
+    });
+
+    function copyWallet() {
+      const walletInput = document.getElementById("walletAddress");
+      walletInput.select();
+      document.execCommand("copy");
+      alert("Wallet address copied!");
+    }
+  </script>
+</body>
+</html>
