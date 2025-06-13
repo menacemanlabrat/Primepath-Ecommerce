@@ -3,49 +3,48 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>PrimePath | Dashboard</title>
+  <title>Dashboard | PrimePath</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body class="dark">
-  <div class="container">
-    <h1>👋 Welcome, PrimeUser</h1>
+<body class="dashboard-page">
 
-    <section class="card">
-      <h2>🪙 Wallet Balance</h2>
-      <p>$130.00</p>
-    </section>
+  <!-- Navigation -->
+  <nav>
+    <h2>PrimePath</h2>
+    <ul>
+      <li><a href="dashboard.html" class="active">Dashboard</a></li>
+      <li><a href="buy-crypto.html">Buy Crypto</a></li>
+      <li><a href="history.html">History</a></li>
+      <li><a href="login.html">Logout</a></li>
+    </ul>
+  </nav>
 
-    <section class="card">
-      <h2>📈 Wallet Growth Chart</h2>
-      <canvas id="growthChart" width="100%" height="300"></canvas>
-    </section>
+  <!-- Dashboard Content -->
+  <section class="dashboard-container">
+    <h3>Welcome, Prime User</h3>
 
-    <section class="card">
-      <h2>🏪 Store Wallet Address</h2>
-      <input type="text" id="walletAddress" value="0xD3f7C3aB56a1e11F9903C2..." readonly style="width: 100%;" />
-      <button onclick="copyWallet()" class="btn">Copy Wallet Address</button>
-    </section>
+    <div class="wallet-summary">
+      <p><strong>Wallet Balance:</strong> $0.00</p>
+      <p><strong>Wallet Address:</strong> <code>0xABC123...DEF456</code></p>
+    </div>
 
-    <section class="card">
-      <h2>💵 Buy Crypto</h2>
-      <p>To fund your store, send crypto to the wallet address above.</p>
-      <p>Need help? <a href="https://wa.me/234XXXXXXXXXX" target="_blank">Chat with a verified agent</a>.</p>
-    </section>
-  </div>
+    <canvas id="walletChart" width="400" height="150"></canvas>
+  </section>
 
+  <!-- Chart Script -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
-    const ctx = document.getElementById('growthChart').getContext('2d');
-    const chart = new Chart(ctx, {
+    const ctx = document.getElementById('walletChart').getContext('2d');
+    const walletChart = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: ['Day 1', 'Day 2', 'Day 3'],
+        labels: ['Start', 'Day 1', 'Day 2', 'Day 3'],
         datasets: [{
-          label: 'Wallet Growth ($)',
-          data: [100, 120, 130],
+          label: 'Wallet Growth',
+          data: [0, 120, 180, 260],
+          backgroundColor: 'rgba(255,0,0,0.1)',
           borderColor: 'red',
-          borderWidth: 2,
-          fill: false
+          borderWidth: 2
         }]
       },
       options: {
@@ -55,13 +54,7 @@
         }
       }
     });
-
-    function copyWallet() {
-      const walletInput = document.getElementById("walletAddress");
-      walletInput.select();
-      document.execCommand("copy");
-      alert("Wallet address copied!");
-    }
   </script>
+
 </body>
 </html>
