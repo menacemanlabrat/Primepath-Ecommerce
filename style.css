@@ -77,3 +77,38 @@ nav ul li a.active {
   border-radius: 10px;
   margin-bottom: 20px;
 }
+/* BUY CRYPTO PAGE */
+.buy-page {
+  background-color: #121212;
+  color: white;
+  font-family: 'Arial', sans-serif;
+  padding: 20px;
+}
+
+.buy-crypto-container {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+}
+
+.wallet-display {
+  background-color: #000;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 16px;
+  margin: 10px 0;
+  color: red;
+  font-weight: bold;
+}
+
+.contact-agent-btn {
+  background-color: red;
+  color: white;
+  padding: 12px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 20px;
+  border-radius: 8px;
+}
