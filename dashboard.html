@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard | PrimePath</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dashboard-page">
+  <header class="header">
+    <h1>👤 PrimePath Dashboard</h1>
+    <nav>
+      <a href="wallet.html">Wallet</a>
+      <a href="buy-crypto.html">Buy Crypto</a>
+      <a href="#">Support</a>
+    </nav>
+  </header>
+
+  <main class="dashboard-content">
+    <section class="welcome">
+      <h2>Welcome, Store Owner 👋</h2>
+      <p>Your wallet is growing automatically. Track your performance below.</p>
+    </section>
+
+    <section class="wallet-summary">
+      <h3>💰 Wallet Balance</h3>
+      <div class="wallet-box">$1,430.00</div>
+    </section>
+
+    <section class="chart-section">
+      <h3>📈 Wallet Growth Chart</h3>
+      <canvas id="walletChart" width="300" height="200"></canvas>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
