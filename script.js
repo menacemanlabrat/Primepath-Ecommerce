@@ -1,16 +1,30 @@
-// Toggle Dark/Light Mode
-const modeToggle = document.getElementById('toggleMode');
-const body = document.body;
+// Toggle hamburger menu
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburger = document.getElementById("hamburger");
+  const menu = document.getElementById("menu");
 
-modeToggle.addEventListener('click', () => {
-  body.classList.toggle('dark-mode');
-  modeToggle.textContent = body.classList.contains('dark-mode') ? '🌙' : '☀️';
-});
+  hamburger.addEventListener("click", () => {
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+  });
 
-// Toggle Hamburger Menu
-const menuToggle = document.getElementById('menuToggle');
-const menu = document.querySelector('.menu');
+  // Dark mode toggle
+  const modeToggle = document.getElementById("modeToggle");
+  const body = document.body;
 
-menuToggle.addEventListener('click', () => {
-  menu.classList.toggle('active');
+  modeToggle.addEventListener("click", () => {
+    body.classList.toggle("dark-mode");
+
+    // Optional: Save preference to localStorage
+    if (body.classList.contains("dark-mode")) {
+      localStorage.setItem("theme", "dark");
+    } else {
+      localStorage.setItem("theme", "light");
+    }
+  });
+
+  // Load saved theme on page load
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    body.classList.add("dark-mode");
+  }
 });
