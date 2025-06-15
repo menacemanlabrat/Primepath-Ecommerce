@@ -1,6 +1,4 @@
-/* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
-
+/* General Reset */
 * {
   margin: 0;
   padding: 0;
@@ -8,16 +6,15 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to right, #fefefe, #f8f8f8);
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(to right, #f8f8f8, #ffffff);
   color: #222;
-  min-height: 100vh;
   transition: background 0.3s, color 0.3s;
 }
 
-.dark-mode {
-  background: #0f0f0f;
-  color: #eee;
+body.dark-mode {
+  background: #121212;
+  color: #fff;
 }
 
 .header {
@@ -25,140 +22,128 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1.2rem 2rem;
-  background-color: #fff;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  position: relative;
-  z-index: 10;
+  background: #fff;
+  border-bottom: 1px solid #eee;
 }
 
-.dark-mode .header {
-  background-color: #121212;
+body.dark-mode .header {
+  background: #1e1e1e;
+  border-color: #333;
 }
 
-.logo {
+.logo img {
   height: 40px;
 }
 
-.menu-toggle {
+.hamburger {
   font-size: 1.8rem;
+  background: none;
+  border: none;
   cursor: pointer;
-  display: none;
 }
 
 .menu {
-  display: flex;
-  gap: 1.5rem;
-}
-
-.menu a {
-  text-decoration: none;
-  color: #222;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-
-.dark-mode .menu a {
-  color: #eee;
-}
-
-.menu a:hover {
-  color: #e60023;
-}
-
-.toggle-mode {
-  cursor: pointer;
-  font-size: 1.3rem;
-}
-
-.login-container {
-  max-width: 400px;
-  margin: 80px auto;
+  display: none;
+  position: absolute;
+  top: 60px;
+  left: 15px;
   background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+body.dark-mode .menu {
+  background: #2a2a2a;
+  border-color: #444;
+}
+
+.menu ul {
+  list-style: none;
+}
+
+.menu ul li {
+  padding: 10px 20px;
+}
+
+.menu ul li a {
+  color: #333;
+  text-decoration: none;
+}
+
+body.dark-mode .menu ul li a {
+  color: #ddd;
+}
+
+.mode-toggle {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Login/Signup Section */
+.form-section {
+  max-width: 400px;
+  margin: 3rem auto;
   padding: 2rem;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  transition: background 0.3s;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.05);
 }
 
-.dark-mode .login-container {
-  background: #1a1a1a;
+body.dark-mode .form-section {
+  background: #1e1e1e;
+  box-shadow: 0 0 15px rgba(255,255,255,0.05);
 }
 
-.login-container h2 {
-  text-align: center;
-  margin-bottom: 1.5rem;
+.form-section h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
 }
 
-.input-group {
-  margin-bottom: 1.2rem;
+.form {
+  display: flex;
+  flex-direction: column;
 }
 
-.input-group label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: 500;
+.form label {
+  margin: 0.5rem 0 0.2rem;
 }
 
-.input-group input {
-  width: 100%;
+.form input {
   padding: 0.8rem;
   border: 1px solid #ccc;
   border-radius: 8px;
-  outline: none;
-  font-size: 1rem;
-  transition: border 0.2s;
+  margin-bottom: 1rem;
 }
 
-.input-group input:focus {
-  border-color: #e60023;
+body.dark-mode .form input {
+  background: #2b2b2b;
+  border-color: #444;
+  color: #fff;
 }
 
-.login-btn {
-  width: 100%;
-  padding: 0.8rem;
-  background-color: #e60023;
+.form button {
+  padding: 0.9rem;
+  background: #c40000;
   color: white;
   border: none;
   border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s;
 }
 
-.login-btn:hover {
-  background-color: #c4001e;
+.form button:hover {
+  background: #a30000;
 }
 
-footer {
-  text-align: center;
-  margin-top: 4rem;
+.form-footer {
+  margin-top: 1rem;
   font-size: 0.9rem;
-  color: #888;
+  text-align: center;
 }
 
-@media (max-width: 768px) {
-  .menu {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    right: 0;
-    background: #fff;
-    padding: 1rem;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-  }
-
-  .dark-mode .menu {
-    background: #1a1a1a;
-  }
-
-  .menu.active {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
+.form-footer a {
+  color: #c40000;
+  text-decoration: none;
 }
