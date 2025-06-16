@@ -1,0 +1,202 @@
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #fff;
+  color: #000;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  margin-right: 0.75rem;
+}
+
+.platform-name {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #d60000;
+}
+
+/* Hamburger */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  height: 20px;
+  width: 26px;
+}
+
+.bar {
+  height: 3px;
+  background-color: #000;
+  border-radius: 3px;
+}
+
+/* Menu */
+.menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 75%;
+  height: 100%;
+  background-color: #d60000;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  transition: right 0.3s ease-in-out;
+  z-index: 999;
+}
+
+.menu.active {
+  right: 0;
+}
+
+.menu ul {
+  margin-top: 2rem;
+}
+
+.menu ul li {
+  margin: 1.2rem 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.menu-bottom {
+  margin-top: auto;
+}
+
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.social-btn {
+  background-color: #fff;
+  color: #d60000;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.dark-mode-toggle {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.icon {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #fff;
+  display: inline-block;
+}
+
+.icon.sun {
+  background-image: url('sun.png'); /* Placeholder */
+  background-size: cover;
+}
+
+.icon.moon {
+  background-image: url('moon.png'); /* Placeholder */
+  background-size: cover;
+}
+
+/* Hero Section */
+.hero {
+  background: url('banner.jpg') center center / cover no-repeat;
+  height: 100vh;
+  position: relative;
+  color: white;
+}
+
+.banner-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  height: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.slogan {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.intro {
+  background: #fff;
+  color: #000;
+  padding: 2rem;
+  text-align: center;
+}
+
+.intro-text {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.cta-btn {
+  background: #0057ff;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.scroll-note {
+  font-size: 0.85rem;
+  color: #999;
+}
+
+/* White Section Placeholder */
+.white-section {
+  padding: 2rem;
+}
