@@ -1,0 +1,241 @@
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+:root {
+  --primary-blue: #1E40AF;
+  --light-bg: #ffffff;
+  --dark-bg: #0f172a;
+  --text-dark: #1e293b;
+  --text-light: #f1f5f9;
+  --capsule-radius: 9999px;
+  --transition: all 0.3s ease;
+}
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: var(--light-bg);
+  color: var(--text-dark);
+  transition: var(--transition);
+}
+
+body.dark {
+  background-color: var(--dark-bg);
+  color: var(--text-light);
+}
+
+/* Header Section */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: transparent;
+  position: relative;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--primary-blue);
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 32px;
+  margin-right: 8px;
+}
+
+.hamburger {
+  background-color: var(--primary-blue);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: var(--capsule-radius);
+  font-size: 18px;
+}
+
+/* Hamburger Menu Slide */
+#menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 70%;
+  height: 100vh;
+  background-color: var(--primary-blue);
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+  z-index: 1000;
+}
+
+#menu.show {
+  right: 0;
+}
+
+#menu a {
+  color: white;
+  font-size: 20px;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  text-decoration: none;
+}
+
+/* Dark Mode Toggle */
+.dark-toggle {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+}
+
+.dark-toggle .icon {
+  font-size: 24px;
+  transition: var(--transition);
+}
+
+/* Hero Section */
+.hero {
+  padding: 60px 20px;
+  text-align: center;
+  background-image: url('./assets/banner-blur.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero h1 {
+  font-size: 36px;
+  color: black;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.hero .cta-btn {
+  background-color: var(--primary-blue);
+  color: white;
+  padding: 15px 30px;
+  border-radius: var(--capsule-radius);
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+/* Scroll Note */
+.scroll-note {
+  margin-top: 10px;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/* Section Titles */
+section h2 {
+  font-size: 28px;
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 30px;
+}
+
+/* Feature Boxes */
+.features, .steps, .plans, .testimonials {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 0 20px;
+  scroll-snap-type: x mandatory;
+}
+
+.feature-box, .step-box, .plan-box, .testimonial-box {
+  min-width: 300px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 20px;
+  scroll-snap-align: start;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.testimonial-box {
+  position: relative;
+}
+
+.testimonial-box .stars {
+  color: gold;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.arrow {
+  background: var(--primary-blue);
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: var(--capsule-radius);
+  font-size: 18px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.arrow.left {
+  left: -40px;
+}
+
+.arrow.right {
+  right: -40px;
+}
+
+/* Capsule Buttons */
+.btn-capsule {
+  display: block;
+  width: fit-content;
+  margin: 30px auto;
+  background: var(--primary-blue);
+  color: white;
+  padding: 15px 40px;
+  border-radius: var(--capsule-radius);
+  font-size: 18px;
+  text-decoration: none;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 60px;
+  padding: 30px 20px;
+  background: #e5e7eb;
+  color: #334155;
+}
+
+footer p {
+  line-height: 1.6;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.socials a {
+  background: var(--primary-blue);
+  color: white;
+  padding: 10px 16px;
+  border-radius: var(--capsule-radius);
+  text-decoration: none;
+}
