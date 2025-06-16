@@ -1,60 +1,33 @@
 // Hamburger Menu Toggle
 const hamburger = document.querySelector('.hamburger');
-const menu = document.querySelector('.menu');
+const navMenu = document.querySelector('.nav-menu');
 
 hamburger.addEventListener('click', () => {
-  menu.classList.toggle('active');
+    navMenu.classList.toggle('active');
+    document.body.classList.toggle('overlay'); // Optional darken effect
 });
 
-// Dark Mode Toggle (Animated Placeholder Logic)
-const sunIcon = document.querySelector('.sun');
-const moonIcon = document.querySelector('.moon');
-let isDark = false;
-
-function toggleDarkMode() {
-  document.body.classList.toggle('dark-mode');
-  isDark = !isDark;
-
-  // Animate icon switch
-  sunIcon.style.display = isDark ? 'none' : 'inline-block';
-  moonIcon.style.display = isDark ? 'inline-block' : 'none';
-}
-
-sunIcon.addEventListener('click', toggleDarkMode);
-moonIcon.addEventListener('click', toggleDarkMode);
-
-// Optional: Close menu on outside click
+// Close nav on outside click (optional)
 document.addEventListener('click', (e) => {
-  if (!menu.contains(e.target) && !hamburger.contains(e.target)) {
-    menu.classList.remove('active');
-  }
+    if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
+        navMenu.classList.remove('active');
+        document.body.classList.remove('overlay');
+    }
 });
 
-// Placeholder for testimonial slider (replace with real logic when testimonials added)
-let currentTestimonial = 0;
+// Optional Dark Mode Toggle
+const toggleBtn = document.getElementById('darkModeToggle');
+const body = document.body;
 
-function showNextTestimonial() {
-  const testimonials = document.querySelectorAll('.testimonial-box');
-  if (testimonials.length === 0) return;
+if (toggleBtn) {
+    toggleBtn.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
 
-  testimonials.forEach((box, index) => {
-    box.style.display = index === currentTestimonial ? 'block' : 'none';
-  });
-
-  currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+        // Animate icon
+        if (body.classList.contains('dark-mode')) {
+            toggleBtn.innerHTML = `<div class="sun"></div>`;
+        } else {
+            toggleBtn.innerHTML = `<div class="moon"></div>`;
+        }
+    });
 }
-
-function showPrevTestimonial() {
-  const testimonials = document.querySelectorAll('.testimonial-box');
-  if (testimonials.length === 0) return;
-
-  currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
-
-  testimonials.forEach((box, index) => {
-    box.style.display = index === currentTestimonial ? 'block' : 'none';
-  });
-}
-
-// Hook these to your arrow buttons (left/right) when you add them
-// document.getElementById('nextTestimony').addEventListener('click', showNextTestimonial);
-// document.getElementById('prevTestimony').addEventListener('click', showPrevTestimonial);
