@@ -1,0 +1,65 @@
+/* style.css */
+
+/* =============== GENERAL =============== */
+
+{ margin: 0; padding: 0; box-sizing: border-box; }
+
+
+body { font-family: 'Inter', sans-serif; line-height: 1.6; background-color: #ffffff; color: #000; transition: background-color 0.3s ease, color 0.3s ease; }
+
+.dark-mode { background-color: #0a0a0a; color: #ffffff; }
+
+h1, h2, h3, h4 { font-weight: 700; margin-bottom: 1rem; }
+
+p { margin-bottom: 1rem; }
+
+img { max-width: 100%; height: auto; }
+
+.container { max-width: 1200px; margin: auto; padding: 20px; }
+
+/* =============== HEADER =============== */ header { display: flex; justify-content: space-between; align-items: center; padding: 20px; background-color: #fff; position: relative; z-index: 1000; }
+
+.logo { font-size: 28px; font-weight: bold; color: #007bff; }
+
+/* =============== HAMBURGER MENU =============== */ .menu-toggle { font-size: 28px; background-color: #007bff; color: #fff; border: none; padding: 10px; border-radius: 6px; }
+
+.nav-menu { display: none; position: absolute; top: 70px; right: 0; width: 250px; background-color: #007bff; color: white; padding: 20px; flex-direction: column; gap: 10px; z-index: 2000; }
+
+.nav-menu.active { display: flex; }
+
+.nav-menu a { color: white; text-decoration: none; padding: 10px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
+
+/* =============== BANNER SECTION =============== */ .banner { background: url('banner.jpg') center/cover no-repeat; padding: 100px 20px; text-align: center; color: white; position: relative; }
+
+.banner h1 { font-size: 36px; margin-bottom: 10px; }
+
+.banner p { font-size: 20px; }
+
+.slogan { font-size: 24px; font-weight: bold; margin-top: 10px; color: #eee; }
+
+/* =============== BUTTONS =============== */ .button { display: inline-block; background-color: #007bff; color: white; padding: 12px 30px; margin-top: 20px; border-radius: 50px; font-weight: 600; text-decoration: none; font-size: 16px; transition: background-color 0.3s; }
+
+.button:hover { background-color: #0056b3; }
+
+/* =============== DARK MODE TOGGLE =============== */ .toggle-dark { position: absolute; top: 20px; right: 60px; background: none; border: none; font-size: 26px; cursor: pointer; transition: transform 0.3s ease; }
+
+/* =============== SECTIONS =============== */ .section { padding: 60px 20px; background-color: #f9f9f9; text-align: center; }
+
+.section.dark { background-color: #111; }
+
+.section-title { font-size: 28px; margin-bottom: 30px; }
+
+.feature-boxes { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; }
+
+.box { flex: 1 1 30%; padding: 20px; background-color: rgba(0,0,0,0.05); border-radius: 20px; }
+
+.testimonials { display: flex; overflow-x: auto; gap: 20px; padding: 20px 0; }
+
+.testimonial { flex: 0 0 300px; background-color: rgba(0,0,0,0.05); padding: 20px; border-radius: 16px; }
+
+/* =============== FOOTER =============== */ footer { text-align: center; padding: 40px 20px; background-color: #000; color: #fff; font-size: 14px; }
+
+footer .social-buttons { margin-top: 20px; display: flex; justify-content: center; gap: 10px; }
+
+footer .social-buttons a { padding: 10px 16px; background-color: #007bff; color: white; border-radius: 30px; text-decoration: none; }
+
